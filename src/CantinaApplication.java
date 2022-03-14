@@ -1,10 +1,8 @@
-package main;
-
 import entity.*;
 
 import java.util.Scanner;
 
-public class Main {
+public class CantinaApplication {
     public static void main(String[] args) {
 
         Cantina cantina = new Cantina();
