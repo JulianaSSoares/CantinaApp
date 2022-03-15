@@ -25,8 +25,8 @@ public class CantinaApplication {
                 }
             case 2:
                 cantina.exibePedido();
-                System.out.println("Taxa de entrega: " + cantina.calculaTaxaEntrega());
-                System.out.println("Valor total do pedido: " + cantina.calculaValorTotalPedido());
+                System.out.println("Taxa de entrega: $" + cantina.calculaTaxaEntrega());
+                System.out.println("Valor total do pedido: $" + cantina.calculaValorTotalPedido());
             case 0:
                 System.exit(0);
         }

@@ -37,7 +37,7 @@ public class Cantina implements ITaxaEntrega {
     public void adicionaItensPedido(String itemPedido) {
         for (int i = 0; i < cardapioCantina.length; i++) {
             if (itemPedido.equals(cardapioCantina[i])) {
-                pratosPedido.add(itemPedido.toUpperCase());
+                pratosPedido.add(itemPedido);
             }
         }
     }
@@ -47,7 +47,7 @@ public class Cantina implements ITaxaEntrega {
         for (int i = 0; i < cardapioCantina.length; i++) {
             if (getPratosPedido().contains(cardapioCantina[i])) {
                 valorCompra += precoCantina[i] + taxaEntregaTotal;
-                System.out.println(cardapioCantina[i] + " "
+                System.out.println(cardapioCantina[i] + " $"
                         + precoCantina[i]);
             }
         }
