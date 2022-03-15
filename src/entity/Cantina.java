@@ -1,6 +1,5 @@
 package entity;
 
-import exceptions.ItemNaoEncontradoException;
 import interfaces.ITaxaEntrega;
 
 import java.util.ArrayList;
@@ -37,20 +36,19 @@ public class Cantina implements ITaxaEntrega {
 
     public void adicionaItensPedido(String itemPedido) {
         for (int i = 0; i < cardapioCantina.length; i++) {
-//            if (getPratosPedido().contains(cardapioCantina[i])) {
-                this.pratosPedido.add(itemPedido.toUpperCase());
-//            } else {
-//                System.out.println("Item não encontrado");
-//            }
+            if (itemPedido.equals(cardapioCantina[i])) {
+                pratosPedido.add(itemPedido.toUpperCase());
+            }
         }
     }
 
     public void exibePedido() {
-        System.out.println("Resumo do Pedido:");
+        System.out.println("Resumo do pedido:");
         for (int i = 0; i < cardapioCantina.length; i++) {
             if (getPratosPedido().contains(cardapioCantina[i])) {
                 valorCompra += precoCantina[i] + taxaEntregaTotal;
-                System.out.println(cardapioCantina[i] + " " + precoCantina[i]);
+                System.out.println(cardapioCantina[i] + " "
+                        + precoCantina[i]);
             }
         }
     }
@@ -75,8 +73,5 @@ public class Cantina implements ITaxaEntrega {
 
     public ArrayList<String> getPratosPedido() {
         return pratosPedido;
-    }
-    public String[] getCardapioCantina() {
-        return cardapioCantina;
     }
 }
